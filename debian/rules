@@ -1,0 +1,222 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+include /usr/share/quilt/quilt.make
+
+ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -g
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+build: build-stamp
+
+build-stamp: $(QUILT_STAMPFN)
+	dh_testdir
+	
+	-test -r /usr/share/misc/config.sub && \
+	cp -f /usr/share/misc/config.sub admin/config.sub
+	-test -r /usr/share/misc/config.guess && \
+	cp -f /usr/share/misc/config.guess admin/config.guess
+
+	#Hideous hack, needs better fix.
+	cp $(CURDIR)/admin/acinclude.m4.in $(CURDIR)/acinclude.m4
+	cat $(CURDIR)/admin/lineak.m4.in >> $(CURDIR)/acinclude.m4
+
+	mkdir $(CURDIR)/m4
+
+	autoreconf -fvi
+	
+	./configure --host=$(DEB_HOST_GNU_TYPE) \
+	            --build=$(DEB_BUILD_GNU_TYPE) \
+		    --prefix=/usr \
+		    --sysconfdir=/etc \
+		    --mandir=/usr/share/man \
+		    --without-arts
+
+	$(MAKE)
+	touch build-stamp
+
+clean: debian-clean unpatch
+	dh_clean
+
+debian-clean:
+	dh_testdir
+	dh_testroot
+	-rm -f *-stamp 
+	
+	[ ! -f Makefile ] || $(MAKE) clean
+	[ ! -f Makefile ] || $(MAKE) distclean
+
+	-rm -f admin/config.sub admin/config.guess admin/ltmain.sh configure
+	-rm -f admin/libtool.m4.in aclocal.m4 acinclude.m4
+	-find $(CURDIR) -name Makefile -exec rm -f {} \;
+	-find $(CURDIR) -name Makefile.in -exec rm -f {} \;
+				
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Main install
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/lineak-kdeplugins
+	rm $(CURDIR)/debian/lineak-kdeplugins/usr/lib/lineakd/plugins/*.a
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+#	dh_installdebconf	
+	dh_installdocs
+	dh_installexamples
+	dh_installmenu
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+	dh_installcron
+	dh_installman
+	dh_installinfo
+	dh_installchangelogs
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+#	dh_perl
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+include /usr/share/quilt/quilt.make
+
+ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -g
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+build: build-stamp
+
+build-stamp: $(QUILT_STAMPFN)
+	dh_testdir
+	
+	-test -r /usr/share/misc/config.sub && \
+	cp -f /usr/share/misc/config.sub admin/config.sub
+	-test -r /usr/share/misc/config.guess && \
+	cp -f /usr/share/misc/config.guess admin/config.guess
+
+	#Hideous hack, needs better fix.
+	cp $(CURDIR)/admin/acinclude.m4.in $(CURDIR)/acinclude.m4
+	cat $(CURDIR)/admin/lineak.m4.in >> $(CURDIR)/acinclude.m4
+
+	mkdir $(CURDIR)/m4
+
+	autoreconf -fvi
+	
+	./configure --host=$(DEB_HOST_GNU_TYPE) \
+	            --build=$(DEB_BUILD_GNU_TYPE) \
+		    --prefix=/usr \
+		    --sysconfdir=/etc \
+		    --mandir=/usr/share/man \
+		    --without-arts
+
+	$(MAKE)
+	touch build-stamp
+
+clean: debian-clean unpatch
+	dh_clean
+
+debian-clean:
+	dh_testdir
+	dh_testroot
+	-rm -f *-stamp 
+	
+	[ ! -f Makefile ] || $(MAKE) clean
+	[ ! -f Makefile ] || $(MAKE) distclean
+
+	-rm -f admin/config.sub admin/config.guess admin/ltmain.sh configure
+	-rm -f admin/libtool.m4.in aclocal.m4 acinclude.m4
+	-find $(CURDIR) -name Makefile -exec rm -f {} \;
+	-find $(CURDIR) -name Makefile.in -exec rm -f {} \;
+				
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Main install
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/lineak-kdeplugins
+	rm $(CURDIR)/debian/lineak-kdeplugins/usr/lib/lineakd/plugins/*.a
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+#	dh_installdebconf	
+	dh_installdocs
+	dh_installexamples
+	dh_installmenu
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+	dh_installcron
+	dh_installman
+	dh_installinfo
+	dh_installchangelogs
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+#	dh_perl
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 

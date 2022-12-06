@@ -1,0 +1,42 @@
+Source: lineak-kdeplugins
+Section: x11
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>> 5.0.0), autotools-dev, automake1.7, autoconf, libtool, liblineak-dev (>= 1:0.9), lineakd (>= 1:0.9), kdelibs4-dev (>= 4:3.4.2), libx11-dev, libxext-dev, libxtst-dev, quilt
+Build-Conflicts: autoconf2.13
+Standards-Version: 3.8.3
+Homepage: http://lineak.sourceforge.net
+
+Package: lineak-kdeplugins
+Architecture: any
+Depends: lineakd (>= 1:0.9-1), ${shlibs:Depends}, ${misc:Depends}
+Description: LinEAK KDE plugins
+ LinEAK, Linux support for Easy Access and Internet Keyboards, features X11 
+ support, windowmanager independence, ability to configure all keys through 
+ GUI or .conf file, volume control and sound controls.
+ .
+ This package contains plugins to control the following KDE applications:
+ amaroK, JuK, KMail, KMix, Konqueror, ksCD and kdesktop.
+
+Source: lineak-kdeplugins
+Section: x11
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>> 5.0.0), autotools-dev, automake1.7, autoconf, libtool, liblineak-dev (>= 1:0.9), lineakd (>= 1:0.9), kdelibs4-dev (>= 4:3.4.2), libx11-dev, libxext-dev, libxtst-dev, quilt
+Build-Conflicts: autoconf2.13
+Standards-Version: 3.8.3
+Homepage: http://lineak.sourceforge.net
+
+Package: lineak-kdeplugins
+Architecture: any
+Depends: lineakd (>= 1:0.9-1), ${shlibs:Depends}, ${misc:Depends}
+Description: LinEAK KDE plugins
+ LinEAK, Linux support for Easy Access and Internet Keyboards, features X11 
+ support, windowmanager independence, ability to configure all keys through 
+ GUI or .conf file, volume control and sound controls.
+ .
+ This package contains plugins to control the following KDE applications:
+ amaroK, JuK, KMail, KMix, Konqueror, ksCD and kdesktop.
+

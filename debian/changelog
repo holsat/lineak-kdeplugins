@@ -1,0 +1,386 @@
+lineak-kdeplugins (2:0.9-6ubuntu1) lucid; urgency=low
+
+  * Merge from debian testing (LP: #502589). Remaining changes:
+    + Remove aRts support.
+      - debian/rules: Add --without-arts to ./configure line.
+
+ -- Artur Rona <ari-tczew@tlen.pl>  Sun, 03 Jan 2010 13:36:27 +0100
+
+lineak-kdeplugins (2:0.9-6) unstable; urgency=low
+
+  * QA upload.
+  * Work around libtool build Problems (Closes: #543027)
+  * Bump compat to 5
+  * Bump standars Version from 3.7.3 to 3.8.3
+    * Properly set the Homepage field
+    * Add README.source
+  * Do not depend on *-1 versions
+  * Move section to source stanza
+
+ -- Christoph Egger <debian@christoph-egger.org>  Fri, 30 Oct 2009 21:16:52 +0100
+
+lineak-kdeplugins (2:0.9-5ubuntu1) jaunty; urgency=low
+
+  * Remove aRts support. (LP: #320915)
+    - debian/rules: Add --without-arts to ./configure line.
+
+ -- Andreas Wenning <awen@awen.dk>  Sat, 18 Apr 2009 10:09:25 +0200
+
+lineak-kdeplugins (2:0.9-5) unstable; urgency=low
+
+  * QA upload
+  * Added missing "#include <cstdlib>" to kmix_plugin/kmixclient.cpp for
+    compilation with gcc-4.3 - thanks to Martin Michlmayr for the patch!
+    (closes: #417369).
+  * debian/rules: do not ignore errors of "make clean"
+
+ -- Ralf Treinen <treinen@debian.org>  Wed, 28 Nov 2007 20:31:59 +0100
+
+lineak-kdeplugins (2:0.9-4) unstable; urgency=low
+
+  * Orphaning this package, setting maintainer field to
+    packages@qa.debian.org.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 15 Oct 2006 02:49:19 +0200
+
+lineak-kdeplugins (2:0.9-3) unstable; urgency=low
+
+  * Build-Conflicts with autoconf2.13 as the arm build-daemons have it
+    installed by default
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 21 Jul 2006 11:45:45 +0200
+
+lineak-kdeplugins (2:0.9-2) unstable; urgency=low
+
+  * Fixed a silly test of the autoconf version in the KDE scripts.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 20 Jul 2006 23:41:22 +0200
+
+lineak-kdeplugins (2:0.9-1) unstable; urgency=low
+
+  * New upstream version. 
+  * Bumped Standards-Version to 3.7.2 (no changes).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 27 May 2006 02:37:23 +0200
+
+lineak-kdeplugins (2:0.8.4-1) unstable; urgency=low
+
+  * New upstream version. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon,  9 Jan 2006 20:06:18 +0100
+
+lineak-kdeplugins (2:0.8.3-7) unstable; urgency=low
+
+  * Build-Depends on liblineak-dev instead of lineak-dev.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 14 Nov 2005 22:53:50 +0100
+
+lineak-kdeplugins (2:0.8.3-6) unstable; urgency=low
+
+  * Use automake-1.7 instead of automake-1.6 (closes: bug#335139). 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 22 Oct 2005 12:53:03 +0200
+
+lineak-kdeplugins (2:0.8.3-5) unstable; urgency=low
+
+  * C++ transition: build-depends on lineak-dev (>= 1:0.8.3-5) and
+    kdelibs4-dev (>= 4:3.4.2-1).
+  * Bumped Standards-Version to 3.6.2 (no changes).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 18 Aug 2005 15:03:16 +0200
+
+lineak-kdeplugins (2:0.8.3-4) unstable; urgency=high
+
+  * Don't start amarok twice if not already started.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun,  1 May 2005 20:02:13 +0200
+
+lineak-kdeplugins (2:0.8.3-3) unstable; urgency=low
+
+  * Build-depends on autoconf/automake1.6. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 29 Apr 2005 12:12:48 +0200
+
+lineak-kdeplugins (2:0.8.3-2) unstable; urgency=low
+
+  * Relitoolized to support GNU/kFreeBSD. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 28 Apr 2005 16:27:25 +0200
+
+lineak-kdeplugins (2:0.8.3-1) unstable; urgency=low
+
+  * New upstream version. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 11 Mar 2005 20:42:02 +0100
+
+lineak-kdeplugins (2:0.8.2-3) unstable; urgency=low
+
+  * Upload without any change to kill the wrong that should have been
+    targeted for experimental.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Tue,  1 Mar 2005 18:52:13 +0100
+
+lineak-kdeplugins (1:0.8.2-2) unstable; urgency=low
+
+  * Patch from Olivier Trichet sent to upstream and applied to CVS.
+  * Pulled that patch from CVS (closes: bug#276579).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed,  1 Dec 2004 15:49:07 +0100
+
+lineak-kdeplugins (1:0.8.2-1) unstable; urgency=low
+
+  * New upstream release. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 11 Nov 2004 15:24:13 +0100
+
+lineak-kdeplugins (1:0.8.1-1) unstable; urgency=low
+
+  * New upstream release. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 28 Oct 2004 13:06:52 +0000
+
+lineak-kdeplugins (1:0.8-2) unstable; urgency=critical
+
+  * Rebuilt against lineak-dev (>= 1:0.8-2) (closes: bug#275094).
+  * Urgency set to critical as it fixes an RC bug that is also in 
+    testing.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri,  8 Oct 2004 20:52:43 +0200
+
+lineak-kdeplugins (1:0.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 13 Sep 2004 15:00:15 +0200
+
+lineak-kdeplugins (0.8beta4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon,  2 Aug 2004 14:35:16 +0200
+
+lineak-kdeplugins (0.8beta3-3) unstable; urgency=low
+
+  * Updated the admin/ directory using cvs.kde.org:
+    - Fixes build on arm;
+    - Fixes build on pure 64-bit architectures.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 11 Jun 2004 17:47:47 +0200
+
+lineak-kdeplugins (0.8beta3-2) unstable; urgency=low
+
+  * This version is now ready for unstable 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon,  7 Jun 2004 00:37:54 +0200
+
+lineak-kdeplugins (0.8beta3-1) experimental; urgency=low
+
+  * New upstream beta version.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed, 28 Apr 2004 11:38:32 +0200
+
+lineak-kdeplugins (0.8beta2-2) experimental; urgency=low
+
+  * Added build-dependency on autotools-dev. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 17 Apr 2004 15:13:04 +0200
+
+lineak-kdeplugins (0.8beta2-1) experimental; urgency=low
+
+  * Initial release (closes: bug#241153).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri,  2 Apr 2004 07:12:15 +0200
+
+lineak-kdeplugins (2:0.9-6ubuntu1) lucid; urgency=low
+
+  * Merge from debian testing (LP: #502589). Remaining changes:
+    + Remove aRts support.
+      - debian/rules: Add --without-arts to ./configure line.
+
+ -- Artur Rona <ari-tczew@tlen.pl>  Sun, 03 Jan 2010 13:36:27 +0100
+
+lineak-kdeplugins (2:0.9-6) unstable; urgency=low
+
+  * QA upload.
+  * Work around libtool build Problems (Closes: #543027)
+  * Bump compat to 5
+  * Bump standars Version from 3.7.3 to 3.8.3
+    * Properly set the Homepage field
+    * Add README.source
+  * Do not depend on *-1 versions
+  * Move section to source stanza
+
+ -- Christoph Egger <debian@christoph-egger.org>  Fri, 30 Oct 2009 21:16:52 +0100
+
+lineak-kdeplugins (2:0.9-5ubuntu1) jaunty; urgency=low
+
+  * Remove aRts support. (LP: #320915)
+    - debian/rules: Add --without-arts to ./configure line.
+
+ -- Andreas Wenning <awen@awen.dk>  Sat, 18 Apr 2009 10:09:25 +0200
+
+lineak-kdeplugins (2:0.9-5) unstable; urgency=low
+
+  * QA upload
+  * Added missing "#include <cstdlib>" to kmix_plugin/kmixclient.cpp for
+    compilation with gcc-4.3 - thanks to Martin Michlmayr for the patch!
+    (closes: #417369).
+  * debian/rules: do not ignore errors of "make clean"
+
+ -- Ralf Treinen <treinen@debian.org>  Wed, 28 Nov 2007 20:31:59 +0100
+
+lineak-kdeplugins (2:0.9-4) unstable; urgency=low
+
+  * Orphaning this package, setting maintainer field to
+    packages@qa.debian.org.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 15 Oct 2006 02:49:19 +0200
+
+lineak-kdeplugins (2:0.9-3) unstable; urgency=low
+
+  * Build-Conflicts with autoconf2.13 as the arm build-daemons have it
+    installed by default
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 21 Jul 2006 11:45:45 +0200
+
+lineak-kdeplugins (2:0.9-2) unstable; urgency=low
+
+  * Fixed a silly test of the autoconf version in the KDE scripts.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 20 Jul 2006 23:41:22 +0200
+
+lineak-kdeplugins (2:0.9-1) unstable; urgency=low
+
+  * New upstream version. 
+  * Bumped Standards-Version to 3.7.2 (no changes).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 27 May 2006 02:37:23 +0200
+
+lineak-kdeplugins (2:0.8.4-1) unstable; urgency=low
+
+  * New upstream version. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon,  9 Jan 2006 20:06:18 +0100
+
+lineak-kdeplugins (2:0.8.3-7) unstable; urgency=low
+
+  * Build-Depends on liblineak-dev instead of lineak-dev.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 14 Nov 2005 22:53:50 +0100
+
+lineak-kdeplugins (2:0.8.3-6) unstable; urgency=low
+
+  * Use automake-1.7 instead of automake-1.6 (closes: bug#335139). 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 22 Oct 2005 12:53:03 +0200
+
+lineak-kdeplugins (2:0.8.3-5) unstable; urgency=low
+
+  * C++ transition: build-depends on lineak-dev (>= 1:0.8.3-5) and
+    kdelibs4-dev (>= 4:3.4.2-1).
+  * Bumped Standards-Version to 3.6.2 (no changes).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 18 Aug 2005 15:03:16 +0200
+
+lineak-kdeplugins (2:0.8.3-4) unstable; urgency=high
+
+  * Don't start amarok twice if not already started.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun,  1 May 2005 20:02:13 +0200
+
+lineak-kdeplugins (2:0.8.3-3) unstable; urgency=low
+
+  * Build-depends on autoconf/automake1.6. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 29 Apr 2005 12:12:48 +0200
+
+lineak-kdeplugins (2:0.8.3-2) unstable; urgency=low
+
+  * Relitoolized to support GNU/kFreeBSD. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 28 Apr 2005 16:27:25 +0200
+
+lineak-kdeplugins (2:0.8.3-1) unstable; urgency=low
+
+  * New upstream version. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 11 Mar 2005 20:42:02 +0100
+
+lineak-kdeplugins (2:0.8.2-3) unstable; urgency=low
+
+  * Upload without any change to kill the wrong that should have been
+    targeted for experimental.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Tue,  1 Mar 2005 18:52:13 +0100
+
+lineak-kdeplugins (1:0.8.2-2) unstable; urgency=low
+
+  * Patch from Olivier Trichet sent to upstream and applied to CVS.
+  * Pulled that patch from CVS (closes: bug#276579).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed,  1 Dec 2004 15:49:07 +0100
+
+lineak-kdeplugins (1:0.8.2-1) unstable; urgency=low
+
+  * New upstream release. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 11 Nov 2004 15:24:13 +0100
+
+lineak-kdeplugins (1:0.8.1-1) unstable; urgency=low
+
+  * New upstream release. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 28 Oct 2004 13:06:52 +0000
+
+lineak-kdeplugins (1:0.8-2) unstable; urgency=critical
+
+  * Rebuilt against lineak-dev (>= 1:0.8-2) (closes: bug#275094).
+  * Urgency set to critical as it fixes an RC bug that is also in 
+    testing.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri,  8 Oct 2004 20:52:43 +0200
+
+lineak-kdeplugins (1:0.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 13 Sep 2004 15:00:15 +0200
+
+lineak-kdeplugins (0.8beta4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon,  2 Aug 2004 14:35:16 +0200
+
+lineak-kdeplugins (0.8beta3-3) unstable; urgency=low
+
+  * Updated the admin/ directory using cvs.kde.org:
+    - Fixes build on arm;
+    - Fixes build on pure 64-bit architectures.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 11 Jun 2004 17:47:47 +0200
+
+lineak-kdeplugins (0.8beta3-2) unstable; urgency=low
+
+  * This version is now ready for unstable 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon,  7 Jun 2004 00:37:54 +0200
+
+lineak-kdeplugins (0.8beta3-1) experimental; urgency=low
+
+  * New upstream beta version.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed, 28 Apr 2004 11:38:32 +0200
+
+lineak-kdeplugins (0.8beta2-2) experimental; urgency=low
+
+  * Added build-dependency on autotools-dev. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 17 Apr 2004 15:13:04 +0200
+
+lineak-kdeplugins (0.8beta2-1) experimental; urgency=low
+
+  * Initial release (closes: bug#241153).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri,  2 Apr 2004 07:12:15 +0200
+

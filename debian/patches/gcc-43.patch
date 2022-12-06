@@ -1,0 +1,30 @@
+GCC 4.3 reduced dependencies between standard headers. Therefor more
+headers need to be included directly
+
+Index: lineak-kdeplugins-0.9/kmix_plugin/kmixclient.cpp
+===================================================================
+--- lineak-kdeplugins-0.9.orig/kmix_plugin/kmixclient.cpp	2009-10-30 21:42:29.000000000 +0100
++++ lineak-kdeplugins-0.9/kmix_plugin/kmixclient.cpp	2009-10-30 21:42:41.000000000 +0100
+@@ -28,6 +28,7 @@
+ #include <kurl.h>
+ #include <kapplication.h>
+ #include <dcopclient.h>
++#include <cstdlib>
+ #include <iostream>
+ #include <lineak/lineak_core_functions.h>
+ #include "kmixclient.h"
+GCC 4.3 reduced dependencies between standard headers. Therefor more
+headers need to be included directly
+
+Index: lineak-kdeplugins-0.9/kmix_plugin/kmixclient.cpp
+===================================================================
+--- lineak-kdeplugins-0.9.orig/kmix_plugin/kmixclient.cpp	2009-10-30 21:42:29.000000000 +0100
++++ lineak-kdeplugins-0.9/kmix_plugin/kmixclient.cpp	2009-10-30 21:42:41.000000000 +0100
+@@ -28,6 +28,7 @@
+ #include <kurl.h>
+ #include <kapplication.h>
+ #include <dcopclient.h>
++#include <cstdlib>
+ #include <iostream>
+ #include <lineak/lineak_core_functions.h>
+ #include "kmixclient.h"

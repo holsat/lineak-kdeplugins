@@ -1,0 +1,10 @@
+Task: apply debian patches
+Tools: quilt
+Command: quilt push -a
+Description: Please read /usr/share/doc/quilt/README.source how to use
+  quilt for managing Debian patches
+Task: apply debian patches
+Tools: quilt
+Command: quilt push -a
+Description: Please read /usr/share/doc/quilt/README.source how to use
+  quilt for managing Debian patches
