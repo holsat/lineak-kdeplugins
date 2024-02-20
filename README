@@ -1,3 +1,10 @@
+
+    ## Status
+
+    This project is here for historical purposes. It no longer builds on modern linux distrubutions and only worked on KDE3.x. Anyone is welcome to update the build files to something more modern and to update it to a modern version of QT and KDE.
+
+## Documentation
+
        This plugin contains macros that can be used in a configuration file that 
        facilitates contolling of KDE applications. This plugin package actually 
        contains the following plugins:
