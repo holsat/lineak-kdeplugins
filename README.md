@@ -1,5 +1,5 @@
 
-    ## Status
+## Status
 
     This project is here for historical purposes. It no longer builds on modern linux distrubutions and only worked on KDE3.x. Anyone is welcome to update the build files to something more modern and to update it to a modern version of QT and KDE.
 
